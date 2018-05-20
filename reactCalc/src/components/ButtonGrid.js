@@ -1,15 +1,14 @@
 import React from 'react';
 import { View, FlatList, List } from 'react-native';
-import Button from './Button'
+import Button from './Button';
+import SquareGrid from 'react-native-square-grid';
 
 
 createButtonGrids = () => {
-    var buttonsInGrid = Array(11)
-    .fill(null)
-    .map((item, index) => index + 1);
+    var buttonsInGrid = [];
     for (var i = 0; i < 10; i++){
-        buttonsInGrid.push(<Button>{i}</Button>);
-        //buttonsInGrid.push({i});
+        //buttonsInGrid.push(<Button>{i}</Button>);
+        buttonsInGrid.push({i});
     }
     return buttonsInGrid;
 }
@@ -22,13 +21,7 @@ const ButtonGrid = () => {
     const { buttonGridStyle } = styles;
     return (
         <View>
-            <FlatList>
-            data={this.createButtonGrids()}
-            numColumns={3}
-            keyExtractor={item => item.id}
-            renderItem={this.renderItem}
-            )}
-            </FlatList>
+            <SquareGrid rows={4} columns={3} items = {this.createButtonGrids()} renderItem = {renderItem} />
         </View>
     );
 };
