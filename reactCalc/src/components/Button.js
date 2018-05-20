@@ -30,7 +30,8 @@ const styles = {
         borderColor: '#007AFF',
         marginLeft: 5,
         marginRight: 5,
-        width: 10
+        width: 50,
+        height: 50
     }
 };
 
