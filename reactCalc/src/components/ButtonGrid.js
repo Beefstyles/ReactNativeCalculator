@@ -2,31 +2,19 @@ import React from 'react';
 import { View } from 'react-native';
 import Button from './Button'
 
+createButtonGrids = () => {
+    var buttonsInGrid = [];
+    for (var i = 0; i < 10; i++){
+        buttonsInGrid.push(<Button>{i}</Button>);
+    }
+    return buttonsInGrid;
+}
+
 const ButtonGrid = () => {
     const { buttonGridStyle } = styles;
     return (
         <View style={buttonGridStyle}>
-                <Button onPress={() => Console.write("Test")}>
-                    1
-                </Button>
-                <Button onPress={() => Console.write("Test")}>
-                    2
-                </Button>
-                <Button onPress={() => Console.write("Test")}>
-                    3
-                </Button>
-                <Button onPress={() => Console.write("Test")}>
-                    4
-                </Button>
-                <Button onPress={() => Console.write("Test")}>
-                    6
-                </Button>
-                <Button onPress={() => Console.write("Test")}>
-                    6
-                </Button>
-                <Button onPress={() => Console.write("Test")}>
-                    6
-                </Button>
+                {this.createButtonGrids()}
         </View>
     );
 };
